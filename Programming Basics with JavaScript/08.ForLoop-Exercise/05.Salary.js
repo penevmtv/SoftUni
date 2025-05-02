@@ -19,6 +19,7 @@ function solve(arr) {
     }
     if (fine >= salary) { 
       isFineBiger = true;
+      break;
     }
   }
   if (isFineBiger) 
