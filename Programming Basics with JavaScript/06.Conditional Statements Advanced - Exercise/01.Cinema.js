@@ -14,4 +14,4 @@ function solve(typeProj, c, r) {
         break;
     }
     console.log((price * allSeats).toFixed(2));
-  }
+}
