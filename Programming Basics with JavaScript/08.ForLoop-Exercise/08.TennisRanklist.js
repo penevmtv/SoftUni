@@ -3,7 +3,7 @@ function solve(arr) {
     let firstPoints = Number(arr[1]);
     let tourPoints = 0;
     let winCount = 0;
-    for (let i = 2; i <= nTour + 1; i++) {
+    for (let i = 2; i < nTour + 2; i++) {
         let result = arr[i];
         if (result === `W`) { 
             tourPoints += 2000;
