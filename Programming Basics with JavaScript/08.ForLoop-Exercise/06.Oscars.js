@@ -4,9 +4,9 @@ function solve(arr) {
     let nRef = Number(arr[2]);
     let isPointEnough = false;
 
-    for (let i = 4; i <= nRef * 2 + 2; i += 2) {
-        let nameLenght = arr[i - 1].length
-        points += (Number(arr[i]) * nameLenght) / 2;
+    for (let i = 3; i < nRef * 2 + 3; i += 2) {
+        let nameLenght = arr[i].length
+        points += (Number(arr[i + 1]) * nameLenght) / 2;
         if (points > 1250.5) { 
             isPointEnough = true;
             break;
