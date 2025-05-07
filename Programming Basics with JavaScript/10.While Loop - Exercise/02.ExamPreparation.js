@@ -1,5 +1,5 @@
 function solve(arr) {
-  let nBadGrades = Number(arr[0]);
+  let nBadGrades = arr[0];
   let badGrades = 0;
   let sumGrades = 0;
   let nProblems = 0;
@@ -13,7 +13,7 @@ function solve(arr) {
     sumGrades += currentGrade;
     if (currentGrade <= 4) {
       badGrades++;
-      if (badGrades === nBadGrades) {
+      if (badGrades == nBadGrades) {
         isNeedBreak = true;
         break;
       }
