@@ -27,6 +27,6 @@ function solve(arr) {
   if (is5SpendDays) {
     console.log(`You can't save the money.`);
     console.log(days);
-  } else 
+  } else
     console.log(`You saved the money for ${days} days.`);
 }
