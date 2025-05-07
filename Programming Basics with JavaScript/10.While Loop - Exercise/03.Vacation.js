@@ -14,11 +14,12 @@ function solve(arr) {
         is5SpendDays = true;
         days++;
         break;
-      } else if (money > savedMoney) {
+      } else if (savedMoney < 0) {
         savedMoney = 0;
       }
     } else {
       savedMoney += money;
+      spendDaysCount = 0;
     }
     days++;
     index += 2;
