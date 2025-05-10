@@ -1,12 +1,18 @@
 function solve(number) {
-  for (let rows = 1; rows <= number; rows++) {
+    let currentNum = 1;
+  for (let rows = 1; ; rows++) {
     let printRow = ` `;
-    let currentNum = 0;
-    for (let place = 1; ;place++) {
+    let isDone = false;
+    for (let place = 1; place <= rows ;place++) {
       printRow += `${currentNum} `;
-      if (place === rows) {
-        
+      currentNum++;
+      if (currentNum > number) {
+        isDone = true;
+        break;
       }
     }
+    console.log(printRow);
+    if (isDone)
+        break;
   }
 }
