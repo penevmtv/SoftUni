@@ -22,5 +22,7 @@ function solve(arr) {
     }
   }
   let percentWins = (allWins / allMatchesCounter) * 100;
-  console.log(``)
+  let percentLosses = 100 - percentWins;
+  console.log(`${percentWins.toFixed(2)}% matches win`);
+  console.log(`${percentLosses.toFixed(2)}% matches lost`);
 }
