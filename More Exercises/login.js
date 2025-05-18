@@ -1,6 +1,9 @@
 function solve(arr) {
     let username = arr[0];
     let reversUsername = ``;
+
+    // reversUsername = username.split(``).reverse().join(``);
+
     for (let currentIndex = username.length - 1; currentIndex >= 0; currentIndex--) {
         reversUsername += username[currentIndex];
     }
