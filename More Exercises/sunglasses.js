@@ -3,7 +3,7 @@ function solve(n) {
     let toPrint = ``;
     for (let currentColumn = 1; currentColumn <= n * 5; currentColumn++) {
       if (currentColumn > (n * 5 - n) / 2 && currentColumn <= (n * 5 + n) / 2) {
-        if (currentRow !== Math.floor(n / 2))
+        if (currentRow !== Math.ceil(n / 2))
           toPrint += ` `;
         else
           toPrint += `|`;
