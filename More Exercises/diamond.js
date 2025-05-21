@@ -26,3 +26,4 @@ function solve(n) {
     console.log(line);
   }
 }
+
