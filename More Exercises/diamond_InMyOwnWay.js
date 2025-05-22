@@ -1,11 +1,11 @@
 function solve(n) {
-  let firstStar = Math.ceil(n % 2);
-  let secondStar = 0;
+  let firstStar = Math.ceil(n / 2);
+  let secondStar = firstStar;
   let allRows = n;
   let isEvenN = false;
   if (n % 2 === 0) {
     allRows = n - 1;
-    secondStar = star + 1;
+    secondStar = firstStar + 1;
     isEvenN = true;
   }
   for (let row = 1; row <= allRows; row++) {
@@ -14,15 +14,24 @@ function solve(n) {
       if (row === 1 && column === firstStar) {
         if (!isEvenN) {
           toPrint += `*`;
-          secondStar = firstStar + 1;
         } else {
           toPrint += `**`;
           column++;
-          secondStar++;
         }
-        firstStar--;
-      }
+      } else if (column === firstStar || column === secondStar) {
+        toPrint += `*`;
+      } else 
+        toPrint += `-`;
       
+    }
+    console.log(toPrint);
+    
+    if (row < Math.ceil(n / 2)) {
+      firstStar--;
+      secondStar++;
+    } else {
+      firstStar++;
+      secondStar--;
     }
   }
 }
