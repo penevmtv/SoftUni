@@ -12,3 +12,15 @@ function solve(arr) {
     }
     console.log(arr.join(` `));
 }
+
+
+function solve(arr) {
+    for (let i = 0; i < arr.length / 2; i++) {
+        let reversedIndex = arr.length - 1 - i;
+        let firstHalfIndex = arr[reversedIndex];
+        let secondHalfIndex = arr[i];
+        arr[i] = firstHalfIndex;
+        arr[reversedIndex] = secondHalfIndex;
+    }
+    console.log(arr.join(` `));
+}
