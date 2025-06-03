@@ -9,7 +9,7 @@
 
 function solve(arr) {
   let isEqual = false;
-  for (let i = 1; i < arr.length - 1; i++) {
+  for (let i = 0; i < arr.length; i++) {
     let leftSum = 0;
     for (let j = 0; j < i; j++) {
       leftSum += arr[j];
@@ -24,9 +24,7 @@ function solve(arr) {
       break;
     }
   }
-  if (!isEqual && arr.length === 1) {
-    console.log(0);
-  } else if (!isEqual) {
+  if (!isEqual) {
     console.log(`no`);
   }
 }
