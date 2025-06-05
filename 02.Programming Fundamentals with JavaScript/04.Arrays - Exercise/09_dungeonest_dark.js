@@ -36,11 +36,13 @@ function solve(string) {
   let isDied = false;
   dungeon:
   for (let room of array) {
+    //let (command, value) = array[room].split(` `);
     let arrRoom = room.split(` `);
     let value = +arrRoom[1];
     switch (arrRoom[0]) {
       case `potion`:
         if (health + value > 100) {value = 100 - health};
+        //value = Math.min(100 - health, value);
         health += value;
         console.log(`You healed for ${value} hp.`);
         console.log(`Current health: ${health} hp.`);
