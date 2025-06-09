@@ -15,3 +15,20 @@ function solve(arr) {
   }
   console.log(array.join(' '));
 }
+
+// Other solution:
+
+function solve(arr) {
+    const nRotations = Number(arr.pop());
+    let newArr = arr.slice();
+    let temporaryArr = [];
+    for (let i = 1; i <= nRotations; i++) {
+        temporaryArr = [];
+        temporaryArr.push(newArr.pop());
+        for (let i = 0; i < newArr.length; i++ ) {
+            temporaryArr.push(newArr[i]);
+        }
+        newArr = temporaryArr;
+    }
+    console.log(newArr.join(` `));
+}
