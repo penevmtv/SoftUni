@@ -36,7 +36,7 @@ function solve(string) {
   let isDied = false;
   dungeon:
   for (let room of array) {
-    //let (command, value) = array[room].split(` `);
+    //let [command, value] = array[room].split(` `);
     let arrRoom = room.split(` `);
     let value = +arrRoom[1];
     switch (arrRoom[0]) {
