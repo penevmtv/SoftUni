@@ -25,3 +25,23 @@ function orders(product, quantity) {
     }
     console.log(totalPrice(quantity).toFixed(2));
 }
+
+
+function orders(product, quantity) {
+    let totalPrice;
+    switch (product) {
+        case `coffee`:
+            totalPrice = x => x * 1.50;
+            break;
+        case `water`:
+            totalPrice = x => x * 1.00;
+            break;
+        case `coke`:
+            totalPrice = x => x * 1.40;
+            break;
+        case `snacks`:
+            totalPrice = x => x * 2.00;
+            break;
+    }
+    return totalPrice(quantity).toFixed(2);
+}
