@@ -6,6 +6,11 @@ function smallestOfThreeNumbers(firstNum, secondNum, thirdNum) {
         result = x > y ? y : x;
         return result;
     }
+    
+    //smallestOfTwoNum = (x,y) => x > y ? y : x;
+
+    //let smallestNum = Math.min(firstNum, secondNum, thirdNum);
+
     let smallestNum = smallestOfTwoNum(smallestOfTwoNum(firstNum, secondNum), thirdNum);
     console.log(smallestNum);
 }
