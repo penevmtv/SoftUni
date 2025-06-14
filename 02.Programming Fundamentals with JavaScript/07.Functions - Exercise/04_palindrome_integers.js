@@ -14,6 +14,12 @@ function palindromeIntegers(arrayOfIntegers) {
         }
         return true;
     }
+
+    // function isPalindrome(integer) {
+    //     let reverseInteger = Number(String(integer).split(``).reverse().join(``));
+
+    //     return integer === reverseInteger;
+    // }
     
     for (let currentInteger of arrayOfIntegers) {
         console.log(isPalindrome(currentInteger));
