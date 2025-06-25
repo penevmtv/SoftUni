@@ -34,8 +34,8 @@ function arrayModifier(arrOfStrings) {
 
             switch (command) {
                 case `swap`:
-                    arrOfIntegers.splice(index1, 1, element2);
-                    arrOfIntegers.splice(index2, 1, element1);
+                    arrOfIntegers.splice(index1, 1, element2);    // arrOfIntegers[index1] = element2;
+                    arrOfIntegers.splice(index2, 1, element1);    // arrOfIntegers[index2] = element1;
                     break;
                 case `multiply`:
                     let result = element1 * element2;
