@@ -40,20 +40,22 @@
 
 
 
+
 function movingTarget(arrOfStrings) {
     let copyArrOfStr = arrOfStrings.slice();
     let arrOfTargets = copyArrOfStr.shift().split(` `);
+    const isValidIndexNum = (arr, index) => index >= 0 && index < arr.length;
 
     let index = 0;
     while (index < copyArrOfStr.length && copyArrOfStr[index] !== `End`) {
         let commandArr = copyArrOfStr[index].split(` `);
 
-        let comand = commandArr.shift();
+        let command = commandArr.shift();
         let [indexNum, numOfAct] = commandArr.map(Number);
 
-        switch (comand) {
+        switch (command) {
             case `Shoot`:
-                if (indexNum >= 0 && indexNum < arrOfTargets.length) {
+                if (isValidIndexNum(arrOfTargets, indexNum) && numOfAct >= 0) {
                     let reducingElement = arrOfTargets[indexNum] - numOfAct;
                     if (reducingElement <=0) {
                         arrOfTargets.splice(indexNum, 1);
@@ -63,7 +65,7 @@ function movingTarget(arrOfStrings) {
                 }
                 break;
             case `Add`:
-                if (indexNum >= 0 && indexNum < arrOfTargets.length) {
+                if (isValidIndexNum(arrOfTargets, indexNum) && numOfAct >= 0) {
                     arrOfTargets.splice(indexNum, 0, numOfAct);
                 } else {
                     console.log(`Invalid placement!`);
