@@ -22,12 +22,10 @@
 
 
 function bonusScoringSystem(arrOfStr) {
-    let copyArrOfStr = arrOfStr.slice();
+    let copyArrOfStr = arrOfStr.slice().map(Number);
     
-    let _ = Number(copyArrOfStr.shift());
-    let numOfLectures = Number(copyArrOfStr.shift());
-    let additBonus = Number(copyArrOfStr.shift());
-    
+    let [_, numOfLectures, additBonus] = copyArrOfStr;
+    copyArrOfStr = copyArrOfStr.slice(3);
 
     arrOfBonuses = copyArrOfStr.map(x => x / numOfLectures * (5 + additBonus));
 
@@ -40,7 +38,7 @@ function bonusScoringSystem(arrOfStr) {
             maxBonusStudAttend = copyArrOfStr[bonusIndex];
         }
     }
-    console.log(`Max Bonus: ${Math.round(maxBonus)}.`);
+    console.log(`Max Bonus: ${Math.ceil(maxBonus)}.`);
     console.log(`The student has attended ${Math.round(maxBonusStudAttend)} lectures.`);
 }
 bonusScoringSystem(['10', '30', '14', '8', '23', '27', '28', '15', '17', '25', '26', '5', '18']);
