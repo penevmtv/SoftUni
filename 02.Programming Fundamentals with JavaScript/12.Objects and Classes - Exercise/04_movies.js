@@ -25,7 +25,17 @@ function movies(inputArray) {
                 movie.director = director;
             }
         } else if (element.includes(`onDate`)) {
-
+            let [movieName, date] = element.split(` onDate `);
+            let movie = arrayOfMovies.find(searchingMovie => searchingMovie.name === movieName);
+            if (movie) {
+                movie.date = date;
+            }
+        }
+    }
+    
+    for (let movieObj of arrayOfMovies) {
+        if (movieObj.name && movieObj.director && movieObj.date) {
+            console.log(JSON.stringify(movieObj));
         }
     }
 }
