@@ -17,10 +17,10 @@
 
 function furniture(arrayOfStrings) {
 
-    let pattern = />>(?<name>[A-Z][A-Za-z]+)<<(?<price>\d+(\.\d+))!(?<quantity>\d+)/;
+    let pattern = />>(?<name>[A-Z][A-Za-z]+)<<(?<price>\d+(\.\d+)?)!(?<quantity>\d+)/;
 
     let names = `Bought furniture:`;
-    let totalPrice = 0;
+    let totalPrice = 0.00;
 
     console.log(`Bought furniture:`);
 
