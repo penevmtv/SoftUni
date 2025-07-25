@@ -49,8 +49,11 @@ function race(inputArray) {
     
     let results = [...racersDistancesMap.entries()];
 
-    
-    console.log(results);
+    results.sort((a, b) => b[1] - a[1]);
+
+    console.log(`1st place: ${results[0][0]}`);
+    console.log(`2nd place: ${results[1][0]}`);
+    console.log(`3rd place: ${results[2][0]}`);
     
 
 }
