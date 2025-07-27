@@ -62,11 +62,10 @@ function starEnigma(inputArray) {
 
         if (resultMatches) {
             
-
             if (resultMatches.groups.attackType === `A`) {
-                attackedPlanets.unshift(resultMatches.groups.name);     
+                attackedPlanets.push(resultMatches.groups.name);     
             } else {
-                destroyedPlanets.unshift(resultMatches.groups.name);
+                destroyedPlanets.push(resultMatches.groups.name);
             }
 
         }
