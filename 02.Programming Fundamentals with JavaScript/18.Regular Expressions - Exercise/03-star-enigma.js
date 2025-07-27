@@ -73,11 +73,11 @@ function starEnigma(inputArray) {
     
     console.log(`Attacked planets: ${attackedPlanets.length}`);
     
-    attackedPlanets.sort((a, b) => a.localeCompare(b)).map(planet => console.log(`-> ${planet}`));
+    attackedPlanets.sort((a, b) => a.localeCompare(b)).forEach(planet => console.log(`-> ${planet}`));
 
     console.log(`Destroyed planets: ${destroyedPlanets.length}`);
     
-    destroyedPlanets.sort((a, b) => a.localeCompare(b)).map(planet => console.log(`-> ${planet}`));
+    destroyedPlanets.sort((a, b) => a.localeCompare(b)).forEach(planet => console.log(`-> ${planet}`));
 }
 starEnigma(['3',
 "tt(''DGsvywgerx>6444444444%H%1B9444",
