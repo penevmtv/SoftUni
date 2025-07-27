@@ -61,11 +61,13 @@ function starEnigma(inputArray) {
         let resultMatches = decryptedString.match(resultPattern);
 
         if (resultMatches) {
+
+            let { name, attackType } = resultMatches.groups;
             
-            if (resultMatches.groups.attackType === `A`) {
-                attackedPlanets.push(resultMatches.groups.name);     
+            if (attackType === `A`) {
+                attackedPlanets.push(name);     
             } else {
-                destroyedPlanets.push(resultMatches.groups.name);
+                destroyedPlanets.push(name);
             }
 
         }
