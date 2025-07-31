@@ -12,7 +12,34 @@
 
 
 function travelTime(arrOfStrs) {
+  let travelMap = new Map();
+  
+  for (let destination of arrOfStrs) {
     
+    let [country, town, cost] = destination.split(` > `);
+    cost = Number(cost);
+    
+    if (travelMap.has(country)) {
+      if (travelMap.get(country).has(town)) {
+        travelMap.get(country).set(town, Math.min(travelMap.get(country).get(town), cost));
+      } else {
+        travelMap.get(country).set(town, cost);
+      }
+    } else {
+      travelMap.set(country, new Map([[town, cost]]));
+    }
+    
+  }
+  let sortedCountries = [...travelMap.keys()].sort((a, b) => a.localeCompare(b));
+  for (let country of sortedCountries) {
+    
+    let sortedTowns = [...travelMap.get(country).entries()].sort((a, b) => a[1] - b[1]);
+    let resultStr = `${country} -> `;
+    for (let [town, cost] of sortedTowns) {
+      resultStr += `${town} -> ${cost} `;    
+    }
+    console.log(resultStr);
+  }
 }
 travelTime([
 "Bulgaria > Sofia > 500",
