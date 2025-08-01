@@ -73,24 +73,31 @@ function arenaTier(arrOfStrs) {
         input = arrOfStrs[index];
     }
 
-    let sortedGladiators = [...gladiatorsMap.entries()].sort((a, b) => b[1].size - a[1].size);
+    let sortedGladiators = [...gladiatorsMap.entries()].sort((a, b) => {
+        let totalSkill1 = [...a[1].values()].reduce((sum, x) => sum + x, 0);
+        let totalSkill2 = [...b[1].values()].reduce((sum, x) => sum + x, 0);
+        if (totalSkill1 !== totalSkill2) {
+            return totalSkill2 - totalSkill1;
+        } else {
+            return a[0].localeCompare(b[0]);
+        }
+    })
 
     for (let [gladiator, techniquesMap] of sortedGladiators) {
-        skillSum = 0;
-        skillsArr = [...techniquesMap.values()].forEach(x => skillSum += x);
         
-        let techniquesEntries = [techniquesMap.entries()].sort((a, b) => {
-            if (a[0] !== b[0]) a[0].localeCompare(b[0]);
-            else b[1] - a[1];
+        let totalSkill = [...techniquesMap.values()].reduce((sum, x) => sum + x, 0);
+        
+        console.log(`${gladiator}: ${totalSkill} skill`); 
+        
+        let techniquesEntries = [...techniquesMap.entries()].sort((a, b) => {
+            if (a[1] !== b[1]) return b[1] - a[1];
+            else return a[0].localeCompare(b[0]);
         })
-
-        console.log(`${gladiator}: ${skillSum} skill`);
-
+        
         for (let [technique, skill] of techniquesEntries) {
             console.log(`- ${technique} <!> ${skill}`);
         }
     }
-
 }
 arenaTier([
 'Peter -> Duck -> 400',
