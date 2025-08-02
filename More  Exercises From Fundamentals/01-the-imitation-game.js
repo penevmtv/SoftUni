@@ -36,7 +36,7 @@ function theImitationGame(arrOfStrs) {
 
                 let numberOfLetters = Number(inputArr.shift());
 
-                newString = encryptedMessage.slice(numberOfLetters) + encryptedMessage.slice(0,numberOfLetters);
+                newString = encryptedMessage.slice(numberOfLetters) + encryptedMessage.slice(0, numberOfLetters);
                 encryptedMessage = newString;
                 break;
 
@@ -53,24 +53,26 @@ function theImitationGame(arrOfStrs) {
                 let [substring, replacement] = inputArr;
 
                 //newString = encryptedMessage.replaceAll(substring, replacement);
+                //encryptedMessage = newString;
 
-                do {
-                    newString = encryptedMessage.replace(substring, replacement);
-                    encryptedMessage = newString;
-                } while (newString.includes(substring));
+                if (substring !== replacement) {
+                    do {
+                        newString = encryptedMessage.replace(substring, replacement);
+                        encryptedMessage = newString;
+                    } while (encryptedMessage.includes(substring));
+                }
 
-                encryptedMessage = newString;
                 break;
         }
         index++;
-        input = workingArr[index];        
+        input = workingArr[index];
     }
     console.log(`The decrypted message is: ${encryptedMessage}`);
 }
 theImitationGame([
-'zzHe',
-'ChangeAll|z|l',
-'Insert|2|o',
-'Move|3',
-'Decode',
+    'zzHe',
+    'ChangeAll|z|l',
+    'Insert|2|o',
+    'Move|3',
+    'Decode',
 ]);
