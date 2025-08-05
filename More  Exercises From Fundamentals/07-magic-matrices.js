@@ -10,7 +10,7 @@
 function magicMatrices(arrOfArrays) {
     const nColAndRows = arrOfArrays.length;
 
-    let sum = arrOfArrays[0].reduce((sum, x) => sum += x);
+    let sum = arrOfArrays[0].reduce((sum, x) => sum += x, 0);
     let isMagical = true;
 
     for (let i = 0; i < nColAndRows; i++) {
