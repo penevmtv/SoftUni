@@ -35,31 +35,36 @@ function radioCrystals(inputArray) {
     }
 
     let workArray = inputArray.slice();
-    const targetThick = workArray.shift();
+    const targetThick = workArray.shift() - 1;
 
     for (let crystal of workArray) {
         let operation = ``;
-        let xRayUsed = false;
         console.log(`Processing chunk ${crystal} microns`);
 
         while (crystal > targetThick) {
+            let times = 0;
 
             if (crystal / 4 >= targetThick) {
-                const times = Math.floor(Math.log(crystal / targetThick) / Math.log(4));
+                times = Math.floor(Math.log(crystal / targetThick) / Math.log(4));
                 crystal = timesOperation(times, cut, crystal);
                 operation = `Cut`;
 
             } else if (crystal * 0.8 >= targetThick) {
-                const times = Math.floor((crystal - targetThick) / (crystal * 0.2));
+                let tempCrystal = crystal;
+                times = 0;
+                while (tempCrystal * 0.8 >= targetThick) {
+                    tempCrystal *= 0.8;
+                    times++;
+                }
                 crystal = timesOperation(times, lap, crystal);
                 operation = `Lap`;
 
             } else if (crystal - 20 >= targetThick) {
-                const times = Math.floor((crystal - targetThick) / 20);
+                times = Math.floor((crystal - targetThick) / 20);
                 crystal = timesOperation(times, grind, crystal);
                 operation = `Grind`;
             } else if (crystal - 2 >= targetThick) {
-                const times = Math.floor((crystal - targetThick) / 2);
+                times = Math.floor((crystal - targetThick) / 2);
                 crystal = timesOperation(times, etch, crystal);
                 operation = `Etch`;
             }
@@ -67,8 +72,16 @@ function radioCrystals(inputArray) {
             console.log(`${operation} x${times}`);
             crystal = transAndWash(crystal);
             console.log(`Transporting and washing`);
+
+            if (crystal === targetThick) {
+                crystal = xRay(crystal);
+                console.log(`X-ray x1`);
+                break;
+            } else if (crystal === targetThick + 1) {
+                break;
+            }
         }
-        
+        console.log(`Finished crystal ${crystal} microns`);
     }
 }
-radioCrystals([1375, 50000]);
+radioCrystals([1000, 4000, 8100]);
