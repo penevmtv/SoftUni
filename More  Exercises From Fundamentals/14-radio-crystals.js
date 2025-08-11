@@ -41,7 +41,7 @@ function radioCrystals(inputArray) {
         let operation = ``;
         console.log(`Processing chunk ${crystal} microns`);
 
-        while (crystal > targetThick) {
+        while (crystal >= targetThick) {
             let times = 0;
 
             if (crystal / 4 >= targetThick) {
@@ -69,9 +69,12 @@ function radioCrystals(inputArray) {
                 operation = `Etch`;
             }
 
-            console.log(`${operation} x${times}`);
-            crystal = transAndWash(crystal);
-            console.log(`Transporting and washing`);
+            if (times > 0) {
+
+                console.log(`${operation} x${times}`);
+                crystal = transAndWash(crystal);
+                console.log(`Transporting and washing`);
+            }
 
             if (crystal === targetThick) {
                 crystal = xRay(crystal);
@@ -81,7 +84,7 @@ function radioCrystals(inputArray) {
                 break;
             }
         }
-        console.log(`Finished crystal ${crystal} microns`);
+        console.log(`Finished crystal ${targetThick + 1} microns`);
     }
 }
 radioCrystals([1000, 4000, 8100]);
