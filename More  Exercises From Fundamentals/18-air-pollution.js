@@ -30,7 +30,7 @@
 
 
 
-function airPollution(inputArr) {
+function airPollution(sofiaMapArr, forcesArr) {
     function breeze(matrix, index) {
         matrix[index] = matrix[index].map(x => Math.max(0, x - 15));
     }
@@ -47,10 +47,9 @@ function airPollution(inputArr) {
         return matrix.map(x => x.map(y => y + value));
     }
 
-    let [sofiaMap, forces] = inputArr;
-    sofiaMap = sofiaMap.map(x => x.split(` `).map(Number));
+    let sofiaMap = sofiaMapArr.slice().map(x => x.split(` `).map(Number));
 
-    for (let force of forces) {
+    for (let force of forcesArr) {
         let [name, value] = force.split(` `);
         value = Number(value);
 
@@ -83,11 +82,11 @@ function airPollution(inputArr) {
     }
 
 }
-airPollution([[
+airPollution([
     '5 7 2 14 4',
     '21 14 2 5 3',
     '3 16 7 42 12',
     '2 20 8 39 14',
     '7 34 1 10 24'],
 ['breeze 1', 'gale 2', 'smog 35']
-]);
+);
