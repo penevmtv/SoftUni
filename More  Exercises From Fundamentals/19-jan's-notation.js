@@ -1,0 +1,66 @@
+// Write a program that parses a series of instructions written in postfix notation and executes them (postfix means the operator is written after the operands). 
+// You will receive a series of instructions – if the instruction is a number, save it; otherwise, the instruction is an arithmetic operator (+-*/) and you must
+//  apply it to the most two most recently saved numbers. Discard these two numbers and in their place, save the result of the operation – this number is now
+//   eligible to be an operand in a subsequent operation. Keep going until all input instructions have been exhausted, or you encounter an error.
+// In the end, if you’re left with a single saved number, this is the result of the calculation and you must print it. If there are more numbers saved, then
+//  the user-supplied too many instructions and you must print "Error: too many operands!". If at any point during the calculation you don’t have two numbers saved,
+//   the user-supplied too few instructions and you must print "Error: not enough operands!".  See the examples for more details.
+// Input
+// You will receive an array with numbers and strings – the numbers will be operands and must be saved; the strings will be arithmetic operators that must be
+//  applied to the operands.
+// Output
+// Print on the console on a single line the final result of the calculation or an error message, as instructed above.
+// Constraints
+// •	The numbers (operands) will be integers
+// •	The strings (operators) will always be one of +-*/
+// •	The result of each operation will be in the range [-253…253-1] (MAX_SAFE_INTEGER will never be exceeded)
+
+
+
+
+function jansNotation(inputArr) {
+    function arithmetics(a, b, operator) {
+        switch (operator) {
+            case `+`:
+                return a + b;
+            case `-`:
+                return a - b;
+            case `*`:
+                return a * b;
+            case `/`:
+                return a / b;
+        }
+    }
+
+    let numsArr = [];
+    for (const input of inputArr) {
+        if (input === Number(input)) {
+            numsArr.push(input);
+        } else {
+            const operator = input;
+            if (numsArr.length > 1) {
+                const [firstNum, secondNum] = numsArr.slice(-2);
+                const newNum = arithmetics(firstNum, secondNum, operator);
+                numsArr.splice(-2, 2, newNum);
+            } else {
+                return `Error: not enough operands!`;
+            }
+        }
+    }
+
+    if (numsArr.length === 1) {
+        return numsArr[0];
+    } else {
+        return `Error: too many operands!`;
+    }
+}
+console.log(jansNotation([
+-1,
+ 1,
+ '+',
+ 101,
+ '*',
+ 18,
+ '+',
+ 3,
+ '/']));
