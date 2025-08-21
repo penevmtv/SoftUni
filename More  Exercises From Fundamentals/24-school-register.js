@@ -15,33 +15,44 @@
 function schoolRegister(inputArr) {
 
     class Student {
-        constructor(name, grade, averageScore) {
-            this.name = name;
-            this.grade = grade;
-            this.averageScore = averageScore;
+        constructor(name, averageScore) {
+            this.names = [name];
+            this.averageScores = [averageScore];
         }
     }
 
-    let studentsArr = [];
+    let studentsObj = {};
+    
     for (const student of inputArr) {
         let [nameArr, gradeArr, averageScoreArr] = student.split(`, `);
         const name = nameArr.split(`: `).pop();
         const grade = Number(gradeArr.split(`: `).pop());
         const averageScore = Number(averageScoreArr.split(`: `).pop());
+
         
         if (averageScore >= 3) {
-            const studentObj = new Student(name, grade + 1, averageScore);
-            studentsArr.push(studentObj);
+            if (!studentsObj.hasOwnProperty([grade])) { 
+                studentsObj[grade] = new Student(name, averageScore);               
+            } else {
+                studentsObj[grade].names.push(name);
+                studentsObj[grade].averageScores.push(averageScore);
+            }       
         }
     }
 
-    studentsArr.sort((objA, objB) => objA.grade - objB.grade);
+    let sortedGradesArr = Object.keys(studentsObj).sort((keyA, keyB) => keyA - keyB);
 
-    for (const obj of studentsArr) {
-        const grade = obj.grade;
-    }
-    
-    
+    for (const grade of sortedGradesArr) {
+        const nextGrade = Number(grade) + 1;
+        const names = studentsObj[grade].names.join(`, `);
+        const scoreSum = studentsObj[grade].averageScores.reduce((sum, score) => sum += score, 0);
+        const averageScore = scoreSum / studentsObj[grade].averageScores.length;
+
+        console.log(`${nextGrade} Grade`);
+        console.log(`List of students: ${names}`);
+        console.log(`Average annual score from last year: ${averageScore.toFixed(2)}`);
+        console.log(``);
+    } 
 }
 schoolRegister([
 "Student name: Mark, Grade: 8, Graduated with an average score: 4.75",
