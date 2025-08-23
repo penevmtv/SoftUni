@@ -19,21 +19,25 @@ function garage(arrOfStrs) {
             garageObj[num] = [];
         }
         
-        let carArr = [];
+        let carObj = {};
         for (const pairs of restStr[0].split(`, `)) {
             const [key, value] = pairs.split(`: `);
             
-            carArr.push(`${key} - ${value}`);           
+            carObj[key] = value;           
         }
-        garageObj[num].push(carArr);
+        
+        garageObj[num].push(carObj);
     }
 
     for (const [num, cars] of Object.entries(garageObj)) {
         console.log(`Garage № ${num}`);
         
-        for (const properties of cars) {
-            
-            console.log(`--- ${properties.join(`, `)}`);
+        for (const obj of cars) {
+            let resultArr = [];
+            for (const [key, value] of Object.entries(obj)) {
+                resultArr.push(`${key} - ${value}`)
+            }
+            console.log(`--- ${resultArr.join(`, `)}`);
         }
     }
 }
