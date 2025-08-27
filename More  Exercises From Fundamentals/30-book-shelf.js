@@ -22,11 +22,33 @@ function bookShelf(arrOfStrs) {
         if (string.includes(` -> `)) {
             const [shelfId, shelfGenre] = string.split(` -> `);
             if (!shelfObj[shelfId]) {
-                shelfObj[shelfId] = shelfGenre;
+                shelfObj[shelfId] = {[shelfGenre]: []};
             }
         } else if (string.includes(`: `)) {
             const [bookInfo, bookGenre] = string.split(`, `);
+            for (const obj of Object.values(shelfObj)) {
+              if (obj[bookGenre]) {
+                obj[bookGenre].push(bookInfo);
+              }
+            }
             
+        }
+    }
+    const sortedShelf = Object.entries(shelfObj).sort((a, b) => {
+        const aLength = Object.values(a[1])[0].length;
+        const bLength = Object.values(b[1])[0].length;
+        return bLength - aLength;
+    })
+    
+    for (const [shelfId, genreObj] of sortedShelf) {
+        const booksCount = Object.values(genreObj)[0].length;
+        const shelfGenre = Object.keys(genreObj)[0];
+        
+        console.log(`${shelfId} ${shelfGenre}: ${booksCount}`);
+        const sortedBooks = Object.values(genreObj)[0].map(el => el.split(`: `)).sort((a, b) => a[0].localeCompare(b[0]));
+        
+        for (const bookArr of sortedBooks) {
+            console.log(`--> ${bookArr.join(`: `)}`);
         }
     }
 }
