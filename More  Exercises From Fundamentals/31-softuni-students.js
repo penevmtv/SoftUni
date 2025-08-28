@@ -24,7 +24,7 @@ function softUniStudents(arrOfStrs) {
             capacity = Number(capacity);
 
             if (!coursesObj[course]) {
-                coursesObj[course] = {capacityNum: capacity};
+                coursesObj[course] = {capacityNum: capacity, students: []};
             } else {
                 coursesObj[course].capacityNum += capacity;
             }
@@ -32,7 +32,29 @@ function softUniStudents(arrOfStrs) {
             const [userName, rest] = string.split(`[`);  
             
             const credits = rest.split(`]`)[0];
-                     
+            const restStr = rest.split(`with email `)[1];
+            const [email, course] = restStr.split(` joins `);
+            
+            if (coursesObj[course] && coursesObj[course].capacityNum > 0) {
+                coursesObj[course].students.push([userName, credits, email]);
+                coursesObj[course].capacityNum--;
+            }
+        }
+    }
+    const sortedCourses = Object.entries(coursesObj).sort((a, b) => {
+        const aLength = a[1].students.length;
+        const bLength = b[1].students.length;
+        return bLength - aLength;
+    })
+    
+    for (const [course, studentsObj] of sortedCourses) {
+        console.log(`${course}: ${studentsObj.capacityNum} places left`);
+        const sortedStudents = studentsObj.students.sort((a, b) => b[1] - a[1]);
+        
+        for (const studentInfo of sortedStudents) {
+            const [userName, credits, email] = studentInfo;
+            
+            console.log(`--- ${credits}: ${userName}, ${email} `);
         }
     }
 }
