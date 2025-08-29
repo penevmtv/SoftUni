@@ -10,12 +10,16 @@ function serializeString(stringArr) {
     const string = stringArr[0];
     let charObj = {};
 
-    for (const char of string) {
+    for (let i = 0; i < string.length; i++) {
+      const char = string.charAt(i);
         if (!charObj[char]) {
             charObj[char] = [];
         }
-
         
+        charObj[char].push(i);
+    }
+    for (const [char, indexArr] of Object.entries(charObj)) {
+        console.log(`${char}:${indexArr.join(`/`)}`);
     }
 }
 serializeString(["avjavamsdmcalsdm"]);
