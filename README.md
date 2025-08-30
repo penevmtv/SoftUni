@@ -2,6 +2,9 @@
 
 🚀 **I upload at least one solved task from the JavaScript course every day!**
 
+
+
+
 ## 📂 **Programming Basics with JavaScript**
 
 #### Topics
