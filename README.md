@@ -18,7 +18,7 @@
 
 ## 📜 Certificate - Programming Basics with JavaScript
 
-![My JS Basics Certificate](certificates/Programming Basics - March 2025 - Certificate.jpg)
+![My JS Basics Certificate](https://github.com/penevmtv/SoftUni/blob/main/js-certificates/Programming%20Basics%20-%20March%202025%20-%20Certificate.jpeg)
 
 📂 **Programming Fundamentals with JavaScript**
 **Core Modules**
