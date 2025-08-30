@@ -2,6 +2,7 @@
 📂 **Programming Basics with JavaScript**
 
 # Topics
+
 |----------|-----------|
 | • 01. Resources | • 09. For Loop |
 | • 02. Course Introduction | • 10. Exercise: For Loop |
@@ -20,6 +21,7 @@
 📂 **Programming Fundamentals with JavaScript**
 
 # Topics
+
 |------------|-------------|
 | • 01. Language Comparison | • 18. Regular Mid Practical Exam |
 | • 02. Course Introduction | • 19. Objects and Classes |
