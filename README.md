@@ -3,6 +3,7 @@
 
 # Topics
 
+| First Half                                 | Second Half                  |
 |--------------------------------------------|------------------------------|
 | • 01. Resources                            | • 09. For Loop               |
 | • 02. Course Introduction                  | • 10. Exercise: For Loop     |
@@ -22,6 +23,7 @@
 
 # Topics
 
+| First Half                                                     | Second Half                                  |
 |----------------------------------------------------------------|----------------------------------------------|
 | • 01. Language Comparison                                      | • 18. Regular Mid Practical Exam             |
 | • 02. Course Introduction                                      | • 19. Objects and Classes                    |
