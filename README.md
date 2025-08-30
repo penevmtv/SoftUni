@@ -34,4 +34,4 @@
 • 13. Map and Set - Lab  
 • 14. More Exercises From Fundamentals - Practice  
 
-🚀 **I upload a solved task from the JavaScript course every day!**
+🚀 **I upload at least one solved task from the JavaScript course every day!**
