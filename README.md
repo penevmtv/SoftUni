@@ -16,6 +16,10 @@
 • 12. Nested Loops - Exercise  
 • 13. More Exercises From Basics - Practice  
 
+## 📜 Certificate - Programming Basics with JavaScript
+
+![My JS Basics Certificate](certificates/Programming Basics - March 2025 - Certificate.jpg)
+
 📂 **Programming Fundamentals with JavaScript**
 **Core Modules**
 
