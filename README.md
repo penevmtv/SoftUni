@@ -1,13 +1,9 @@
 # SoftUni JavaScript Learning Path
 
 🚀 **I upload at least one solved task from the JavaScript course every day!**
-
-
-
-
-
-
-
+<br>
+<br>
+<br>
 ## 📂 **Programming Basics with JavaScript**
 
 #### Topics
