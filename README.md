@@ -1,7 +1,10 @@
 # SoftUni JavaScript Learning Path
-📂 **Programming Basics with JavaScript**
 
-# Topics
+🚀 **I upload at least one solved task from the JavaScript course every day!**
+
+## 📂 **Programming Basics with JavaScript**
+
+#### Topics
 
 |                                            |                              |
 |--------------------------------------------|------------------------------|
@@ -19,9 +22,9 @@
 
 ![My JS Basics Certificate](https://github.com/penevmtv/SoftUni/blob/main/js-certificates/Programming%20Basics%20-%20March%202025%20-%20Certificate.jpeg)
 
-📂 **Programming Fundamentals with JavaScript**
+## 📂 **Programming Fundamentals with JavaScript**
 
-# Topics
+#### Topics
 
 |                                                                |                                              |
 |----------------------------------------------------------------|----------------------------------------------|
@@ -47,5 +50,3 @@
 ## 📜 Certificate - Programming Fundamentals with JavaScript
 
 ![My JS Fundamentals Certificate](https://github.com/penevmtv/SoftUni/blob/main/js-certificates/Programming%20Fundamentals%20with%20JavaScript%20-%20May%202025%20-%20Certificate.jpeg)
-
-🚀 **I upload at least one solved task from the JavaScript course every day!**
