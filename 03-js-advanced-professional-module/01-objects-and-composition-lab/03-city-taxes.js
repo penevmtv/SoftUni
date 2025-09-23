@@ -18,13 +18,13 @@ function cityTaxes(name, population, treasury) {
     const townObj = { name, population, treasury };
     townObj.taxRate = 10;
 
-    function increaseTreasury(treasury, population, taxRate) {
+    function increaseTreasury() {
         Math.floor(this.treasury += (this.population * this.taxRate));
     }
-    function increasePopulation(percent, population) {
+    function increasePopulation(percent) {
         Math.floor(this.population += (this.population * (percent / 100)));
     }
-    function decreaseTreasury(percent, treasury) {
+    function decreaseTreasury(percent) {
         Math.floor(this.treasury -= (this.treasury * (percent / 100)));
     }
 

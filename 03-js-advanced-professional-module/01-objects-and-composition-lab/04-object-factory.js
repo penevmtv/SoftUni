@@ -25,7 +25,7 @@ function objectFactory(library, orders) {
     const resultArr = [];
 
     for (const orderObj of orders) {
-        const resultObj = orderObj.template;
+        const resultObj = { ...orderObj.template };
 
         for (let part of orderObj.parts) {
             resultObj[part] = library[part];
