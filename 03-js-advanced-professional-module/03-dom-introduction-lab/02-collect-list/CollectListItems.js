@@ -7,7 +7,7 @@
 
 
 function extractText() {
-    let list = document.querySelectorAll("ul#items li");
+    let list = document.querySelectorAll("#items li");
     let textarea = document.querySelector("#result");
     
     for (let element of list) {
