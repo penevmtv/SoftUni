@@ -52,3 +52,27 @@
 ## 📜 Certificate - Programming Fundamentals with JavaScript
 
 ![My JS Fundamentals Certificate](https://github.com/penevmtv/SoftUni/blob/main/js-certificates/Programming%20Fundamentals%20with%20JavaScript%20-%20May%202025%20-%20Certificate.jpeg)
+
+## 📂 **JS Advanced**
+
+#### Topics
+
+|                                                                |                                              |
+|----------------------------------------------------------------|----------------------------------------------|
+| • 01. Objects and Composition - Lab                            | • 18.                                        |
+| • 02. Objects and Composition - Exercise                       | • 19.                                        |
+| • 03. DOM Introduction - Lab                                   | • 20.                                        |
+| • 04. DOM Introduction - Exercise                              | • 21.                                        |
+| • 05. DOM Manipulation and Events - Lab                        | • 22.                                        |
+| • 06. DOM Manipulation and Events - Exercise                   | • 23.                                        |
+| • 07. Advanced Functions - Lab                                 | • 24.                                        |
+| • 08. Advanced Functions - Exercise                            | • 25.                                        |
+| • 09. Unit Testing and Error Handling - Lab                    | • 26.                                        |
+| • 10. Unit Testing and Error Handling - Exercise               | • 27.                                        |
+| • 11. Classes and Attributes - Lab                             | • 28.                                        |
+| • 12. Classes and Attributes - Exercise                        | • 29.                                        |
+| • 13. Prototypes and Inheritance - Lab                         | • 30.                                        |
+| • 14. Prototypes and Inheritance - Exercise                    | • 31.                                        |
+| • 15.                                                          | • 32.                                        |
+| • 16.                                                          | • 33.                                        |
+| • 17.                                                          | • 34.                                        |
