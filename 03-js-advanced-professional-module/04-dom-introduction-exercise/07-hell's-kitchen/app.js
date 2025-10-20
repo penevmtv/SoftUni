@@ -49,21 +49,7 @@ function solve() {
          }
       }
 
-      for (const [restaurantName, workersObj] of Object.entries(restaurantsObj)) {
-         let bestSalary = 0;
-         let salarySum = 0;
-
-         const workersData = workersObj.workersArr;
-         for (let [_, salary] of workersData) {
-            salary = Number(salary);
-            salarySum += salary;
-            bestSalary = Math.max(bestSalary, salary);
-         }
-         const averageSalary = (salarySum / workersData.length);
-
-         restaurantsObj[restaurantName].averageSalary = averageSalary.toFixed(2);
-         restaurantsObj[restaurantName].bestSalary = bestSalary.toFixed(2);
-      }
+      updateAvgAndBestSalary(restaurantsObj);
 
       const sortedRestaurants = Object.entries(restaurantsObj).sort((a, b) => b[1].averageSalary - a[1].averageSalary);
       const [bestRestaurant, workersObj] = sortedRestaurants[0];
@@ -76,5 +62,23 @@ function solve() {
 
       document.querySelector('#workers p').textContent = bestWorkers;
 
+   }
+
+   function updateAvgAndBestSalary(obj) {
+      for (const [restaurantName, workersObj] of Object.entries(obj)) {
+         let bestSalary = 0;
+         let salarySum = 0;
+
+         const workersData = workersObj.workersArr;
+         for (let [_, salary] of workersData) {
+            salary = Number(salary);
+            salarySum += salary;
+            bestSalary = Math.max(bestSalary, salary);
+         }
+         const averageSalary = (salarySum / workersData.length);
+
+         obj[restaurantName].averageSalary = averageSalary.toFixed(2);
+         obj[restaurantName].bestSalary = bestSalary.toFixed(2);
+      }
    }
 }
