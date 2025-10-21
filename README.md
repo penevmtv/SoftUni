@@ -57,22 +57,24 @@
 
 #### Topics
 
-|                                                                |                                              |
-|----------------------------------------------------------------|----------------------------------------------|
-| • 01. Objects and Composition - Lab                            | • 18.                                        |
-| • 02. Objects and Composition - Exercise                       | • 19.                                        |
-| • 03. DOM Introduction - Lab                                   | • 20.                                        |
-| • 04. DOM Introduction - Exercise                              | • 21.                                        |
-| • 05. DOM Manipulation and Events - Lab                        | • 22.                                        |
-| • 06. DOM Manipulation and Events - Exercise                   | • 23.                                        |
-| • 07. Advanced Functions - Lab                                 | • 24.                                        |
-| • 08. Advanced Functions - Exercise                            | • 25.                                        |
-| • 09. Unit Testing and Error Handling - Lab                    | • 26.                                        |
-| • 10. Unit Testing and Error Handling - Exercise               | • 27.                                        |
-| • 11. Classes and Attributes - Lab                             | • 28.                                        |
-| • 12. Classes and Attributes - Exercise                        | • 29.                                        |
-| • 13. Prototypes and Inheritance - Lab                         | • 30.                                        |
-| • 14. Prototypes and Inheritance - Exercise                    | • 31.                                        |
-| • 15.                                                          | • 32.                                        |
-| • 16.                                                          | • 33.                                        |
-| • 17.                                                          | • 34.                                        |
+|                                                                |                                                 |
+|----------------------------------------------------------------|-------------------------------------------------|
+| • 01. Objects and Composition                                  | • 20. Asynchronous Programming                  |
+| • 02. Exercise: Objects and Composition                        | • 21. Exercise: Asynchronous Programming        |
+| • 03. DOM Introduction                                         | • 22. Remote Data and Authentications           |
+| • 04. Exercise: DOM Introduction                               | • 23. Exercise: Remote Data and Authentications |
+| • 05. DOM Manipulation and Events                              | • 24. Single Page Applications                  |
+| • 06. Exercise: DOM Manipulations and Events                   | • 25. Exercise: Single Page Applications        |
+| • 07. Advanced Functions                                       | • 26. Architecture and Testing                  |
+| • 08. Exercise: Advanced Functions                             | • 27. Exercise: Architecture and Testing        |
+| • 09. Unit Testing and Error Handling                          | • 28. Client Side Rendering                     |
+| • 10. Exercise: Unit Testing and Error Handling                | • 29. Exercise: Client Side Rendering           |
+| • 11. Classes and Attributes                                   | • 30. Routing                                   |
+| • 12. Exercise: Classes and Attributes                         | • 31. Exercise: Routing                         |
+| • 13. Prototypes and Inheritance                               | • 32. Modular Applications                      |
+| • 14. Exercise: Prototypes and Inheritance                     | • 33. Exercise: Modular Applications            |
+| • 15. Workshop: Browse                                         | • 34. Exam Preparation                          |
+| • 16. Exam Preparation                                         | • 35. Workshop: End-To-End Application Part 1   |
+| • 17. Regular Exam                                             | • 36. Workshop: End-To-End Application Part 2   |
+| • 18. HTTP and REST Services                                   | • 37. Workshop: Web Components                  |
+| • 19. Exercise: HTTP and REST Services                         | • 38. Regular Exam                              |
